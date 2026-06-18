@@ -1,0 +1,11 @@
+VendorID,VendorName,Region,RiskCategory
+V001,Apex Logistics,North,High
+V002,ByteCorp IT Solutions,West,Medium
+V003,Global Consulting Group,South,High
+V004,Vertex Office Supplies,East,Low
+V005,Nexus Trade Corp,North,High
+V006,Prime Utilities Ltd,South,Low
+V007,Horizon Marketing Inc,West,Medium
+V008,Synergy Security Services,East,Low
+V009,Shell Company Partners,North,High
+V010,Titan Manufacturing,West,Low

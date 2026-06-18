@@ -1,0 +1,142 @@
+TransactionID,VendorID,Amount,Date,Department,GLAccount,PaymentType
+TXN-1001,V002,33499.0,2026-06-08 10:08:00,Finance,600600 - Professional Fees,ACH
+TXN-1002,V010,1914.33,2026-06-03 17:14:00,Marketing & Sales,500100 - Raw Materials,ACH
+TXN-1003,V009,32362.87,2026-06-12 13:28:00,Human Resources,600100 - Travel Expense,Wire
+TXN-1004,V007,12865.27,2026-06-05 10:06:00,Information Technology,600100 - Travel Expense,Credit Card
+TXN-1005,V002,38213.5,2026-06-09 16:46:00,Information Technology,500100 - Raw Materials,ACH
+TXN-1006,V007,25065.81,2026-06-12 18:12:00,Finance,600600 - Professional Fees,ACH
+TXN-1007,V001,10641.47,2026-06-10 12:54:00,Purchasing,600100 - Travel Expense,Credit Card
+TXN-1008,V005,28787.96,2026-06-12 14:23:00,Marketing & Sales,600200 - Office Supplies,Check
+TXN-1009,V002,28756.53,2026-06-08 15:29:00,Operations,500300 - IT Services,Wire
+TXN-1010,V006,10692.64,2026-06-02 10:25:00,Finance,500300 - IT Services,ACH
+TXN-1011,V004,39498.36,2026-06-11 16:41:00,Operations,600400 - Marketing Expense,Credit Card
+TXN-1012,V003,6713.55,2026-06-09 15:37:00,Information Technology,500100 - Raw Materials,Credit Card
+TXN-1013,V006,44881.0,2026-06-05 16:31:00,Human Resources,600100 - Travel Expense,ACH
+TXN-1014,V002,28421.35,2026-06-12 15:04:00,Human Resources,600400 - Marketing Expense,Credit Card
+TXN-1015,V009,43712.99,2026-06-01 10:46:00,Information Technology,600600 - Professional Fees,Check
+TXN-1016,V006,13560.76,2026-06-04 14:00:00,Finance,600600 - Professional Fees,Check
+TXN-1017,V009,23091.83,2026-06-04 17:19:00,Human Resources,500100 - Raw Materials,Wire
+TXN-1018,V003,34431.73,2026-06-17 14:38:00,Information Technology,600400 - Marketing Expense,ACH
+TXN-1019,V002,39603.12,2026-06-10 12:03:00,Information Technology,500100 - Raw Materials,ACH
+TXN-1020,V002,22126.58,2026-06-03 17:49:00,Purchasing,600200 - Office Supplies,Wire
+TXN-1021,V008,7848.15,2026-06-17 12:27:00,Operations,500100 - Raw Materials,Wire
+TXN-1022,V005,44784.15,2026-06-12 14:57:00,Marketing & Sales,500100 - Raw Materials,Credit Card
+TXN-1023,V002,10499.03,2026-06-11 17:37:00,Human Resources,600200 - Office Supplies,Wire
+TXN-1024,V001,31998.92,2026-06-02 09:04:00,Finance,500300 - IT Services,ACH
+TXN-1025,V009,12892.24,2026-06-16 11:34:00,Human Resources,600600 - Professional Fees,Credit Card
+TXN-1026,V004,36433.62,2026-06-05 15:06:00,Marketing & Sales,500300 - IT Services,Credit Card
+TXN-1027,V007,38940.74,2026-06-02 10:41:00,Marketing & Sales,600100 - Travel Expense,Credit Card
+TXN-1028,V006,11565.21,2026-06-05 17:28:00,Finance,600200 - Office Supplies,Credit Card
+TXN-1029,V003,21086.95,2026-06-03 14:51:00,Information Technology,500100 - Raw Materials,ACH
+TXN-1030,V001,44968.07,2026-06-01 12:59:00,Purchasing,600200 - Office Supplies,Credit Card
+TXN-1031,V008,10011.75,2026-06-11 15:10:00,Marketing & Sales,600100 - Travel Expense,Credit Card
+TXN-1032,V005,13193.59,2026-06-16 13:12:00,Marketing & Sales,600200 - Office Supplies,ACH
+TXN-1033,V010,24627.69,2026-06-11 16:03:00,Purchasing,500100 - Raw Materials,Wire
+TXN-1034,V001,4064.96,2026-06-04 10:38:00,Operations,600600 - Professional Fees,Wire
+TXN-1035,V007,42401.03,2026-06-08 18:38:00,Finance,600100 - Travel Expense,ACH
+TXN-1036,V007,26473.42,2026-06-17 10:59:00,Purchasing,500300 - IT Services,Wire
+TXN-1037,V006,12319.85,2026-06-05 13:41:00,Human Resources,600400 - Marketing Expense,Check
+TXN-1038,V002,20893.71,2026-06-04 12:34:00,Finance,500100 - Raw Materials,Check
+TXN-1039,V003,39698.46,2026-06-08 11:18:00,Information Technology,600200 - Office Supplies,Credit Card
+TXN-1040,V009,13962.01,2026-06-17 17:42:00,Purchasing,500300 - IT Services,ACH
+TXN-1041,V003,5636.58,2026-06-04 11:35:00,Information Technology,500300 - IT Services,Check
+TXN-1042,V010,32433.74,2026-06-05 13:40:00,Human Resources,500100 - Raw Materials,Credit Card
+TXN-1043,V005,4607.28,2026-06-12 08:02:00,Finance,600100 - Travel Expense,Check
+TXN-1044,V003,44101.01,2026-06-04 17:28:00,Purchasing,600600 - Professional Fees,Credit Card
+TXN-1045,V009,5478.39,2026-06-05 17:02:00,Finance,500300 - IT Services,Wire
+TXN-1046,V007,2361.38,2026-06-12 14:57:00,Human Resources,600200 - Office Supplies,Wire
+TXN-1047,V002,35215.17,2026-06-12 11:47:00,Information Technology,600200 - Office Supplies,Wire
+TXN-1048,V003,1602.99,2026-06-11 13:51:00,Marketing & Sales,600600 - Professional Fees,Wire
+TXN-1049,V005,35538.17,2026-06-04 12:55:00,Human Resources,600100 - Travel Expense,Credit Card
+TXN-1050,V004,36838.1,2026-06-15 11:19:00,Human Resources,600200 - Office Supplies,Wire
+TXN-1051,V001,9094.28,2026-06-11 08:55:00,Purchasing,600100 - Travel Expense,Check
+TXN-1052,V006,23168.55,2026-06-11 13:07:00,Purchasing,600200 - Office Supplies,Check
+TXN-1053,V001,27047.42,2026-06-12 14:50:00,Finance,600400 - Marketing Expense,ACH
+TXN-1054,V007,8958.51,2026-06-02 09:27:00,Operations,500100 - Raw Materials,Wire
+TXN-1055,V006,3613.83,2026-06-11 10:20:00,Marketing & Sales,600600 - Professional Fees,Check
+TXN-1056,V009,30176.73,2026-06-11 12:44:00,Information Technology,500300 - IT Services,Wire
+TXN-1057,V004,30089.36,2026-06-11 11:47:00,Marketing & Sales,500100 - Raw Materials,Check
+TXN-1058,V007,37600.77,2026-06-10 09:13:00,Operations,600400 - Marketing Expense,Check
+TXN-1059,V008,20176.11,2026-06-05 16:30:00,Marketing & Sales,600600 - Professional Fees,Wire
+TXN-1060,V002,23437.61,2026-06-11 12:52:00,Information Technology,600600 - Professional Fees,Check
+TXN-1061,V004,7057.25,2026-06-02 10:30:00,Human Resources,600400 - Marketing Expense,Credit Card
+TXN-1062,V010,32466.39,2026-06-11 15:25:00,Human Resources,600200 - Office Supplies,Wire
+TXN-1063,V001,35139.71,2026-06-08 17:51:00,Finance,600400 - Marketing Expense,ACH
+TXN-1064,V009,41327.42,2026-06-04 14:08:00,Human Resources,600400 - Marketing Expense,Check
+TXN-1065,V008,36767.79,2026-06-17 13:53:00,Operations,500100 - Raw Materials,Credit Card
+TXN-1066,V003,38836.52,2026-06-15 08:48:00,Purchasing,600200 - Office Supplies,Check
+TXN-1067,V009,28390.31,2026-06-09 14:04:00,Marketing & Sales,600600 - Professional Fees,Check
+TXN-1068,V004,15445.22,2026-06-03 12:09:00,Information Technology,600400 - Marketing Expense,Wire
+TXN-1069,V004,18961.62,2026-06-11 17:29:00,Finance,600400 - Marketing Expense,ACH
+TXN-1070,V004,17831.72,2026-06-01 18:24:00,Marketing & Sales,600400 - Marketing Expense,ACH
+TXN-1071,V006,34029.64,2026-06-12 17:47:00,Information Technology,600600 - Professional Fees,Wire
+TXN-1072,V008,12645.62,2026-06-16 14:24:00,Human Resources,600600 - Professional Fees,Credit Card
+TXN-1073,V003,41419.6,2026-06-01 12:37:00,Marketing & Sales,500100 - Raw Materials,ACH
+TXN-1074,V002,19573.27,2026-06-15 13:03:00,Purchasing,600400 - Marketing Expense,Check
+TXN-1075,V004,15044.64,2026-06-11 08:48:00,Marketing & Sales,600400 - Marketing Expense,Check
+TXN-1076,V002,1362.56,2026-06-02 11:14:00,Marketing & Sales,600600 - Professional Fees,ACH
+TXN-1077,V001,42757.72,2026-06-05 11:39:00,Finance,600200 - Office Supplies,Wire
+TXN-1078,V008,5590.33,2026-06-05 14:44:00,Purchasing,500300 - IT Services,Check
+TXN-1079,V003,27522.51,2026-06-04 10:19:00,Operations,500100 - Raw Materials,ACH
+TXN-1080,V005,30641.95,2026-06-11 12:45:00,Operations,600200 - Office Supplies,ACH
+TXN-1081,V010,37460.44,2026-06-08 13:44:00,Purchasing,600600 - Professional Fees,ACH
+TXN-1082,V010,15950.57,2026-06-12 10:23:00,Finance,500100 - Raw Materials,Check
+TXN-1083,V001,37093.73,2026-06-04 13:23:00,Marketing & Sales,600600 - Professional Fees,Credit Card
+TXN-1084,V003,8338.09,2026-06-17 17:17:00,Marketing & Sales,600400 - Marketing Expense,Credit Card
+TXN-1085,V007,26865.12,2026-06-11 10:53:00,Purchasing,500300 - IT Services,Credit Card
+TXN-1086,V004,25858.31,2026-06-11 10:01:00,Marketing & Sales,600400 - Marketing Expense,Check
+TXN-1087,V003,9939.33,2026-06-09 10:17:00,Marketing & Sales,500100 - Raw Materials,Check
+TXN-1088,V009,23489.91,2026-06-05 15:15:00,Finance,600400 - Marketing Expense,Wire
+TXN-1089,V008,32176.99,2026-06-15 13:05:00,Purchasing,600200 - Office Supplies,Credit Card
+TXN-1090,V004,30046.22,2026-06-12 15:35:00,Information Technology,500100 - Raw Materials,Check
+TXN-1091,V007,24992.29,2026-06-12 13:29:00,Purchasing,500300 - IT Services,Check
+TXN-1092,V004,32597.15,2026-06-11 17:47:00,Finance,600600 - Professional Fees,Wire
+TXN-1093,V004,33367.91,2026-06-09 17:37:00,Human Resources,500100 - Raw Materials,Check
+TXN-1094,V002,13682.97,2026-06-12 09:19:00,Human Resources,600600 - Professional Fees,Wire
+TXN-1095,V005,43856.12,2026-06-10 16:08:00,Finance,600100 - Travel Expense,ACH
+TXN-1096,V010,21388.16,2026-06-15 10:11:00,Information Technology,600100 - Travel Expense,Check
+TXN-1097,V008,37084.15,2026-06-11 15:04:00,Finance,500100 - Raw Materials,ACH
+TXN-1098,V003,36595.82,2026-06-10 10:15:00,Human Resources,500100 - Raw Materials,Credit Card
+TXN-1099,V010,35687.97,2026-06-08 16:24:00,Operations,600400 - Marketing Expense,Credit Card
+TXN-1100,V005,44556.39,2026-06-10 18:39:00,Operations,600100 - Travel Expense,ACH
+TXN-1101,V004,9890.62,2026-06-03 11:15:00,Purchasing,500100 - Raw Materials,ACH
+TXN-1102,V003,18679.03,2026-06-16 09:02:00,Finance,600200 - Office Supplies,Check
+TXN-1103,V005,38752.5,2026-06-03 13:14:00,Purchasing,600600 - Professional Fees,Wire
+TXN-1104,V007,24733.03,2026-06-05 08:52:00,Finance,600200 - Office Supplies,ACH
+TXN-1105,V001,35771.97,2026-06-10 14:07:00,Human Resources,600400 - Marketing Expense,Check
+TXN-1106,V007,22771.01,2026-06-16 14:05:00,Information Technology,500100 - Raw Materials,ACH
+TXN-1107,V007,14843.31,2026-06-09 12:05:00,Purchasing,600600 - Professional Fees,ACH
+TXN-1108,V005,2290.31,2026-06-04 15:33:00,Operations,600600 - Professional Fees,Credit Card
+TXN-1109,V005,44864.07,2026-06-12 16:52:00,Human Resources,600100 - Travel Expense,Credit Card
+TXN-1110,V006,15332.22,2026-06-04 15:21:00,Marketing & Sales,600600 - Professional Fees,Credit Card
+TXN-1111,V005,42561.11,2026-06-02 14:05:00,Purchasing,500300 - IT Services,Check
+TXN-1112,V006,43673.22,2026-06-11 16:52:00,Finance,600100 - Travel Expense,Credit Card
+TXN-1113,V007,8847.42,2026-06-12 16:48:00,Finance,600600 - Professional Fees,Credit Card
+TXN-1114,V001,12384.0,2026-06-05 09:28:00,Human Resources,600600 - Professional Fees,Credit Card
+TXN-1115,V002,43805.03,2026-06-08 13:10:00,Finance,500100 - Raw Materials,ACH
+TXN-1116,V009,4647.81,2026-06-04 14:07:00,Marketing & Sales,600600 - Professional Fees,Wire
+TXN-1117,V008,13487.84,2026-06-09 13:53:00,Purchasing,600400 - Marketing Expense,Credit Card
+TXN-1118,V004,25031.3,2026-06-11 17:58:00,Marketing & Sales,600600 - Professional Fees,Wire
+TXN-1119,V002,34884.04,2026-06-12 10:59:00,Information Technology,500100 - Raw Materials,Check
+TXN-1120,V001,32809.27,2026-06-16 17:28:00,Information Technology,600400 - Marketing Expense,Check
+TXN-1121,V006,52432.25,2026-06-06 14:30:00,Operations,600400 - Marketing Expense,ACH
+TXN-1122,V008,58088.89,2026-06-07 11:15:00,Information Technology,600600 - Professional Fees,ACH
+TXN-1123,V004,32297.45,2026-06-13 16:45:00,Operations,600400 - Marketing Expense,ACH
+TXN-1124,V001,51469.37,2026-06-14 15:20:00,Information Technology,600600 - Professional Fees,ACH
+TXN-1125,V007,47501.8,2026-06-03 23:45:00,Marketing & Sales,600600 - Professional Fees,Wire
+TXN-1126,V003,46487.45,2026-06-08 02:15:00,Marketing & Sales,600200 - Office Supplies,Wire
+TXN-1127,V009,19275.77,2026-06-11 04:30:00,Operations,600100 - Travel Expense,Wire
+TXN-1128,V008,27615.9,2026-06-15 23:10:00,Finance,600400 - Marketing Expense,Wire
+TXN-1129,V001,750000.0,2026-06-03 15:55:00,Purchasing,500100 - Raw Materials,Wire
+TXN-1130,V003,620000.0,2026-06-08 13:21:00,Finance,500100 - Raw Materials,Wire
+TXN-1131,V009,950000.0,2026-06-02 14:54:00,Purchasing,500100 - Raw Materials,Wire
+TXN-1132,V009,520000.0,2026-06-11 16:55:00,Information Technology,500100 - Raw Materials,Wire
+TXN-1133,V009,125000.0,2026-06-02 10:00:00,Finance,700100 - Manual Adjustments,Check
+TXN-1134,V001,34000.0,2026-06-05 14:30:00,Human Resources,700100 - Manual Adjustments,Check
+TXN-1135,V010,280000.0,2026-06-09 16:00:00,Finance,700100 - Manual Adjustments,Check
+TXN-1136,V002,15000.0,2026-06-12 11:15:00,Marketing & Sales,700100 - Manual Adjustments,Check
+TXN-2001,V001,300000.0,2026-06-10 10:30:00,Operations,500100 - Raw Materials,Wire
+TXN-2002,V001,300000.0,2026-06-10 10:32:00,Operations,500100 - Raw Materials,Wire
+TXN-2003,V005,180000.0,2026-06-12 14:00:00,Operations,500100 - Raw Materials,ACH
+TXN-2004,V005,180000.0,2026-06-12 14:02:00,Operations,500100 - Raw Materials,ACH
+TXN-3001,V003,950000.0,2026-06-04 11:20:00,Human Resources,600600 - Professional Fees,Wire

@@ -1,0 +1,22 @@
+{
+  "name": "task-manager-backend",
+  "version": "1.0.0",
+  "description": "Simple Express and MongoDB backend for MERN Task Manager App",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "mongoose": "^8.3.1",
+    "mssql": "^12.5.5",
+    "sqlite3": "^6.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}
