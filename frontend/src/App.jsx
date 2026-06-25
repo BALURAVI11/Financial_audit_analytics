@@ -76,22 +76,22 @@ Try clicking one of the audit questions below to scan the ledger:`,
       setDbStatus(statusData);
 
       // Fetch dashboard stats
-      const statsRes = await fetch(`${API_BASE}/stats`);
+      const statsRes = await fetch(`${API_BASE}/dashboard/stats`);
       const statsData = await statsRes.json();
       setStats(statsData);
 
       // Fetch vendor analytics
-      const vendorRes = await fetch(`${API_BASE}/vendor-analytics`);
+      const vendorRes = await fetch(`${API_BASE}/dashboard/vendor-analytics`);
       const vendorData = await vendorRes.json();
       setVendorData(vendorData);
 
       // Fetch journal testing
-      const journalRes = await fetch(`${API_BASE}/journal-testing`);
+      const journalRes = await fetch(`${API_BASE}/dashboard/journal-testing`);
       const journalData = await journalRes.json();
       setJournalData(journalData);
 
       // Fetch fraud detection
-      const fraudRes = await fetch(`${API_BASE}/fraud-detection`);
+      const fraudRes = await fetch(`${API_BASE}/dashboard/fraud-detection`);
       const fraudData = await fraudRes.json();
       setFraudData(fraudData);
 

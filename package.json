@@ -4,9 +4,11 @@
   "description": "Root runner for modern MERN Task Manager",
   "scripts": {
     "install-all": "npm install --prefix backend && npm install --prefix frontend",
+    "postinstall": "npm install --prefix backend",
     "backend": "npm run dev --prefix backend",
     "frontend": "npm run dev --prefix frontend",
-    "dev": "concurrently \"npm run backend\" \"npm run frontend\""
+    "dev": "concurrently \"npm run backend\" \"npm run frontend\"",
+    "start": "node backend/server.js"
   },
   "dependencies": {
     "concurrently": "^8.2.2"

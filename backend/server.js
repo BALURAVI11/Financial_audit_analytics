@@ -57,7 +57,9 @@ app.get('/api/db-status', (req, res) => {
 app.get('/api/dashboard/stats', async (req, res) => {
   try {
     const txns = await query('SELECT Amount, VendorID, IsManual, Date FROM Fact_Transactions');
+    txns.forEach(t => t.Amount = parseFloat(t.Amount || 0));
     const invoices = await query('SELECT InvoiceAmount FROM Fact_Invoices');
+    invoices.forEach(i => i.InvoiceAmount = parseFloat(i.InvoiceAmount || 0));
     const vendors = await query('SELECT VendorID, RiskCategory FROM Dim_Vendor');
 
     const totalTransactions = txns.length;
@@ -125,6 +127,7 @@ app.get('/api/dashboard/vendor-analytics', async (req, res) => {
   try {
     const vendors = await query('SELECT VendorID, VendorName, Region, RiskCategory FROM Dim_Vendor');
     const txns = await query('SELECT VendorID, Amount, Date FROM Fact_Transactions');
+    txns.forEach(t => t.Amount = parseFloat(t.Amount || 0));
 
     // Calculate spent per vendor
     const vendorMap = {};
@@ -210,6 +213,7 @@ app.get('/api/dashboard/journal-testing', async (req, res) => {
       FROM Fact_Transactions t
       JOIN Dim_Vendor v ON t.VendorID = v.VendorID
     `);
+    txns.forEach(t => t.Amount = parseFloat(t.Amount || 0));
 
     const manualEntries = [];
     const weekendEntries = [];
@@ -258,12 +262,14 @@ app.get('/api/dashboard/fraud-detection', async (req, res) => {
       FROM Fact_Invoices i
       JOIN Dim_Vendor v ON i.VendorID = v.VendorID
     `);
+    invoices.forEach(i => i.InvoiceAmount = parseFloat(i.InvoiceAmount || 0));
 
     const txns = await query(`
       SELECT t.TransactionID, t.VendorID, v.VendorName, t.Amount, t.Date, t.Department, t.GLAccount
       FROM Fact_Transactions t
       JOIN Dim_Vendor v ON t.VendorID = v.VendorID
     `);
+    txns.forEach(t => t.Amount = parseFloat(t.Amount || 0));
 
     // A. Duplicate Invoices (Same Vendor, Same Amount, Same Date)
     const invSeen = {};

@@ -5,11 +5,14 @@ from datetime import datetime
 
 # Helper to read .env file
 def load_env():
-    env_path = os.path.join(os.path.dirname(__file__), "../backend/.env")
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    env_path = os.path.join(script_dir, "../backend/.env")
+    env_dir = os.path.join(script_dir, "../backend")
     if not os.path.exists(env_path):
-        env_path = os.path.join(os.path.dirname(__file__), ".env")
+        env_path = os.path.join(script_dir, ".env")
+        env_dir = script_dir
         if not os.path.exists(env_path):
-            return {}
+            return {}, script_dir
     
     config = {}
     with open(env_path, "r") as f:
@@ -18,12 +21,16 @@ def load_env():
             if line and not line.startswith("#") and "=" in line:
                 key, val = line.split("=", 1)
                 config[key.strip()] = val.strip().strip('"').strip("'")
-    return config
+    return config, env_dir
 
-config = load_env()
+config, env_dir = load_env()
 
 DB_TYPE = config.get("DB_TYPE", "sqlserver").lower()
-SQLITE_PATH = config.get("SQLITE_PATH", "audit_local.db")
+raw_sqlite_path = config.get("SQLITE_PATH", "audit_local.db")
+if not os.path.isabs(raw_sqlite_path):
+    SQLITE_PATH = os.path.abspath(os.path.join(env_dir, raw_sqlite_path))
+else:
+    SQLITE_PATH = raw_sqlite_path
 
 # Connection details for MSSQL
 SERVER = config.get("MSSQL_SERVER", "localhost")
