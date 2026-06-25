@@ -1,24 +1,24 @@
 import { useState, useEffect, useRef } from 'react';
-import { 
-  LayoutDashboard, 
-  Users, 
-  BookOpen, 
-  ShieldAlert, 
-  Database, 
-  Play, 
-  TrendingUp, 
-  Activity, 
-  AlertTriangle, 
-  FileText, 
+import {
+  LayoutDashboard,
+  Users,
+  BookOpen,
+  ShieldAlert,
+  Database,
+  Play,
+  TrendingUp,
+  Activity,
+  AlertTriangle,
+  FileText,
   Send,
   CheckCircle2,
   DollarSign
 } from 'lucide-react';
 import './App.css';
 
-const API_BASE = 'http://127.0.0.1:5001/api';
+const API_BASE = 'https://adutibackend-bjbfc0esa0hvc2gy.eastasia-01.azurewebsites.net/api';
 
-// Currency formatting helper
+// Currency formatting helpers
 const formatINR = (value) => {
   if (value === undefined || value === null) return '₹0';
   return new Intl.NumberFormat('en-IN', {
@@ -118,10 +118,10 @@ Try clicking one of the audit questions below to scan the ledger:`,
     try {
       setEtlRunning(true);
       setEtlLogs('Executing Ingestion and Transformation scripts...');
-      
+
       const res = await fetch(`${API_BASE}/etl/run`, { method: 'POST' });
       const data = await res.json();
-      
+
       if (data.success) {
         setEtlLogs(data.logs);
         // Refresh all data
@@ -157,7 +157,7 @@ Try clicking one of the audit questions below to scan the ledger:`,
       }
 
       const reply = await response.json();
-      
+
       setChatMessages(prev => [...prev, {
         sender: 'assistant',
         text: reply.answer,
@@ -184,7 +184,7 @@ Try clicking one of the audit questions below to scan the ledger:`,
 
   return (
     <div className="app-container">
-      
+
       {/* SIDEBAR NAVIGATION */}
       <aside className="sidebar">
         <div className="top-sec">
@@ -197,28 +197,28 @@ Try clicking one of the audit questions below to scan the ledger:`,
           </div>
 
           <nav className="nav-menu">
-            <button 
+            <button
               className={`nav-item ${activeTab === 'executive' ? 'active' : ''}`}
               onClick={() => setActiveTab('executive')}
             >
               <LayoutDashboard size={18} />
               Executive Dashboard
             </button>
-            <button 
+            <button
               className={`nav-item ${activeTab === 'vendors' ? 'active' : ''}`}
               onClick={() => setActiveTab('vendors')}
             >
               <Users size={18} />
               Vendor Analytics
             </button>
-            <button 
+            <button
               className={`nav-item ${activeTab === 'journal' ? 'active' : ''}`}
               onClick={() => setActiveTab('journal')}
             >
               <BookOpen size={18} />
               Journal Entry Testing
             </button>
-            <button 
+            <button
               className={`nav-item ${activeTab === 'fraud' ? 'active' : ''}`}
               onClick={() => setActiveTab('fraud')}
             >
@@ -246,7 +246,7 @@ Try clicking one of the audit questions below to scan the ledger:`,
             </div>
           )}
 
-          <button 
+          <button
             className={`etl-btn ${etlRunning ? 'running' : ''}`}
             onClick={runEtlPipeline}
             disabled={etlRunning}
@@ -260,7 +260,7 @@ Try clicking one of the audit questions below to scan the ledger:`,
       {/* MAIN CONTENT AREA */}
       <div className="main-wrapper">
         <main className="main-content">
-          
+
           {/* Header */}
           <header className="dashboard-header">
             <div className="header-title-sec">
@@ -316,7 +316,7 @@ Try clicking one of the audit questions below to scan the ledger:`,
                 <Activity size={12} className="spinner" /> ETL Execution Logs:
               </div>
               <pre style={{ overflowX: 'auto', fontFamily: 'monospace', maxHeight: '100px', opacity: 0.8 }}>{etlLogs}</pre>
-              <button 
+              <button
                 onClick={() => setEtlLogs('')}
                 style={{
                   position: 'absolute',
@@ -377,11 +377,11 @@ Try clicking one of the audit questions below to scan the ledger:`,
                 <div className="gauge-container">
                   <svg className="gauge-svg" width="72" height="72">
                     <circle className="gauge-bg" cx="36" cy="36" r="30" />
-                    <circle 
-                      className="gauge-fill" 
-                      cx="36" 
-                      cy="36" 
-                      r="30" 
+                    <circle
+                      className="gauge-fill"
+                      cx="36"
+                      cy="36"
+                      r="30"
                       stroke={stats.auditRiskScore > 70 ? 'var(--accent-rose)' : stats.auditRiskScore > 40 ? 'var(--accent-amber)' : 'var(--accent-emerald)'}
                       strokeDasharray={`${(stats.auditRiskScore / 100) * 188.4} 188.4`}
                     />
@@ -395,7 +395,7 @@ Try clicking one of the audit questions below to scan the ledger:`,
           {/* TAB 1: EXECUTIVE AUDIT DASHBOARD */}
           {activeTab === 'executive' && (
             <div className="analytics-grid">
-              
+
               {/* Left Column: Vendor Payment Trends */}
               <div className="dashboard-card">
                 <div className="card-title-sec">
@@ -417,12 +417,12 @@ Try clicking one of the audit questions below to scan the ledger:`,
                           <stop offset="100%" stopColor="var(--accent-indigo)" stopOpacity="0.0" />
                         </linearGradient>
                       </defs>
-                      
+
                       {/* Grid Lines */}
                       <line className="chart-grid-line" x1="0" y1="50" x2="500" y2="50" />
                       <line className="chart-grid-line" x1="0" y1="100" x2="500" y2="100" />
                       <line className="chart-grid-line" x1="0" y1="150" x2="500" y2="150" />
-                      
+
                       {/* Draw Trend Area & Line */}
                       {(() => {
                         const trends = vendorData.paymentTrends;
@@ -432,10 +432,10 @@ Try clicking one of the audit questions below to scan the ledger:`,
                           const y = 180 - (t.Amount / maxVal) * 150;
                           return { x, y, val: t.Amount, date: t.Date };
                         });
-                        
+
                         const linePath = points.map(p => `${p.x},${p.y}`).join(' L ');
                         const areaPath = `0,180 L ${linePath} L 500,180 Z`;
-                        
+
                         return (
                           <>
                             <path className="chart-path-bg" d={areaPath} />
@@ -479,29 +479,29 @@ Try clicking one of the audit questions below to scan the ledger:`,
                     {vendorData.riskDistribution.map((r, i) => {
                       const totalSpent = vendorData.riskDistribution.reduce((s, row) => s + row.TotalSpent, 0) || 1;
                       const percentage = Math.round((r.TotalSpent / totalSpent) * 100);
-                      
+
                       return (
                         <div key={i} style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
                           <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.8rem', fontWeight: '600' }}>
                             <span className="status-indicator">
-                              <span className={`dot ${r.Category.toLowerCase() === 'high' ? 'rose' : r.Category.toLowerCase() === 'medium' ? 'sqlite' : ''}`} 
-                                    style={{ 
-                                      backgroundColor: r.Category === 'High' ? 'var(--accent-rose)' : r.Category === 'Medium' ? 'var(--accent-amber)' : 'var(--accent-emerald)',
-                                      boxShadow: r.Category === 'High' ? '0 0 8px var(--accent-rose)' : r.Category === 'Medium' ? '0 0 8px var(--accent-amber)' : '0 0 8px var(--accent-emerald)'
-                                    }}>
+                              <span className={`dot ${r.Category.toLowerCase() === 'high' ? 'rose' : r.Category.toLowerCase() === 'medium' ? 'sqlite' : ''}`}
+                                style={{
+                                  backgroundColor: r.Category === 'High' ? 'var(--accent-rose)' : r.Category === 'Medium' ? 'var(--accent-amber)' : 'var(--accent-emerald)',
+                                  boxShadow: r.Category === 'High' ? '0 0 8px var(--accent-rose)' : r.Category === 'Medium' ? '0 0 8px var(--accent-amber)' : '0 0 8px var(--accent-emerald)'
+                                }}>
                               </span>
                               {r.Category} Risk ({r.Count} Vendors)
                             </span>
                             <span>{formatINR(r.TotalSpent)} ({percentage}%)</span>
                           </div>
-                          
+
                           {/* Segmented bar */}
                           <div style={{ width: '100%', height: '8px', background: 'rgba(255,255,255,0.03)', borderRadius: '4px', overflow: 'hidden' }}>
-                            <div style={{ 
-                              width: `${percentage}%`, 
-                              height: '100%', 
+                            <div style={{
+                              width: `${percentage}%`,
+                              height: '100%',
                               background: r.Category === 'High' ? 'var(--accent-rose)' : r.Category === 'Medium' ? 'var(--accent-amber)' : 'var(--accent-emerald)',
-                              borderRadius: '4px' 
+                              borderRadius: '4px'
                             }}></div>
                           </div>
                         </div>
@@ -585,27 +585,27 @@ Try clicking one of the audit questions below to scan the ledger:`,
                     </h3>
                     <div className="card-subtitle">Detailed verification tables for manual entries, late-night postings, weekends, and high-value transactions.</div>
                   </div>
-                  
+
                   <div className="subtabs">
-                    <button 
+                    <button
                       className={`subtab-btn ${journalSubTab === 'manual' ? 'active' : ''}`}
                       onClick={() => setJournalSubTab('manual')}
                     >
                       Manual Entries
                     </button>
-                    <button 
+                    <button
                       className={`subtab-btn ${journalSubTab === 'weekend' ? 'active' : ''}`}
                       onClick={() => setJournalSubTab('weekend')}
                     >
                       Weekend Entries
                     </button>
-                    <button 
+                    <button
                       className={`subtab-btn ${journalSubTab === 'lateNight' ? 'active' : ''}`}
                       onClick={() => setJournalSubTab('lateNight')}
                     >
                       Late Night Entries
                     </button>
-                    <button 
+                    <button
                       className={`subtab-btn ${journalSubTab === 'highValue' ? 'active' : ''}`}
                       onClick={() => setJournalSubTab('highValue')}
                     >
@@ -686,25 +686,25 @@ Try clicking one of the audit questions below to scan the ledger:`,
                   </div>
 
                   <div className="subtabs">
-                    <button 
+                    <button
                       className={`subtab-btn ${fraudSubTab === 'duplicates-inv' ? 'active' : ''}`}
                       onClick={() => setFraudSubTab('duplicates-inv')}
                     >
                       Duplicate Invoices
                     </button>
-                    <button 
+                    <button
                       className={`subtab-btn ${fraudSubTab === 'duplicates-pay' ? 'active' : ''}`}
                       onClick={() => setFraudSubTab('duplicates-pay')}
                     >
                       Duplicate Payments
                     </button>
-                    <button 
+                    <button
                       className={`subtab-btn ${fraudSubTab === 'outliers' ? 'active' : ''}`}
                       onClick={() => setFraudSubTab('outliers')}
                     >
                       Outlier Transactions
                     </button>
-                    <button 
+                    <button
                       className={`subtab-btn ${fraudSubTab === 'suspicious' ? 'active' : ''}`}
                       onClick={() => setFraudSubTab('suspicious')}
                     >
@@ -715,7 +715,7 @@ Try clicking one of the audit questions below to scan the ledger:`,
 
                 {fraudData ? (
                   <div className="table-container">
-                    
+
                     {/* A. Duplicate Invoices */}
                     {fraudSubTab === 'duplicates-inv' && (
                       fraudData.duplicateInvoices && fraudData.duplicateInvoices.length > 0 ? (
@@ -908,13 +908,13 @@ Try clicking one of the audit questions below to scan the ledger:`,
           <div className="copilot-chat-area">
             {chatMessages.map((msg, i) => (
               <div key={i} className={`chat-message ${msg.sender}`}>
-                
+
                 {/* Regular text / markdown formatting */}
                 <div style={{ whiteSpace: 'pre-wrap', wordBreak: 'break-word' }}>
                   {msg.text.split('\n').map((line, lIdx) => {
                     // Simple Markdown replacement logic for display
                     let cleanLine = line;
-                    
+
                     // Headers
                     if (cleanLine.startsWith('# ')) {
                       return <h1 key={lIdx}>{cleanLine.replace('# ', '')}</h1>;
@@ -925,16 +925,16 @@ Try clicking one of the audit questions below to scan the ledger:`,
                     if (cleanLine.startsWith('### ')) {
                       return <h3 key={lIdx}>{cleanLine.replace('### ', '')}</h3>;
                     }
-                    
+
                     // List items
                     if (cleanLine.startsWith('- ')) {
                       cleanLine = cleanLine.replace('- ', '');
                       // Check for bold text
-                      return <li key={lIdx} dangerouslySetInnerHTML={{__html: cleanLine.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>').replace(/\`(.*?)\`/g, '<code>$1</code>')}} />;
+                      return <li key={lIdx} dangerouslySetInnerHTML={{ __html: cleanLine.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>').replace(/\`(.*?)\`/g, '<code>$1</code>') }} />;
                     }
 
                     // Regular line with bold or code formatting
-                    return <p key={lIdx} dangerouslySetInnerHTML={{__html: cleanLine.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>').replace(/\`(.*?)\`/g, '<code>$1</code>')}} />;
+                    return <p key={lIdx} dangerouslySetInnerHTML={{ __html: cleanLine.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>').replace(/\`(.*?)\`/g, '<code>$1</code>') }} />;
                   })}
                 </div>
 
@@ -954,8 +954,8 @@ Try clicking one of the audit questions below to scan the ledger:`,
                           <tr key={rIdx}>
                             <td><strong>{row.VendorName}</strong></td>
                             <td>
-                              <span className="badge high" style={{ 
-                                padding: '2px 5px', 
+                              <span className="badge high" style={{
+                                padding: '2px 5px',
                                 fontSize: '0.65rem',
                                 background: row.RiskScore > 70 ? 'rgba(244,63,94,0.1)' : 'rgba(245,158,11,0.1)',
                                 color: row.RiskScore > 70 ? 'var(--accent-rose)' : 'var(--accent-amber)'
@@ -1006,7 +1006,7 @@ Try clicking one of the audit questions below to scan the ledger:`,
                 <span></span>
               </div>
             )}
-            
+
             <div ref={chatEndRef} />
           </div>
 
@@ -1014,8 +1014,8 @@ Try clicking one of the audit questions below to scan the ledger:`,
           <div className="chat-suggestions">
             <div className="chat-suggestions-title">Quick Queries</div>
             {suggestions.map((s, idx) => (
-              <button 
-                key={idx} 
+              <button
+                key={idx}
                 className="suggestion-pill"
                 onClick={() => handleCopilotQuery(s)}
                 disabled={chatLoading}
@@ -1027,14 +1027,14 @@ Try clicking one of the audit questions below to scan the ledger:`,
 
           {/* Chat Input Section */}
           <div className="copilot-input-sec">
-            <form 
+            <form
               className="copilot-input-form"
               onSubmit={(e) => {
                 e.preventDefault();
                 handleCopilotQuery(chatInput);
               }}
             >
-              <input 
+              <input
                 type="text"
                 className="copilot-input"
                 placeholder="Ask audit questions..."
@@ -1042,8 +1042,8 @@ Try clicking one of the audit questions below to scan the ledger:`,
                 onChange={(e) => setChatInput(e.target.value)}
                 disabled={chatLoading}
               />
-              <button 
-                type="submit" 
+              <button
+                type="submit"
                 className="copilot-send-btn"
                 disabled={chatLoading || !chatInput.trim()}
               >
